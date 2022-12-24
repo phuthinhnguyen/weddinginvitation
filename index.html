@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="normalize.css">
+    <title>Document</title>
+    <style>
+        *{box-sizing: border-box;}
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: "Raleway";      
+        }
+        .item1{
+            position: relative;
+        }
+        .item1 img{
+            width: 100%;
+            height: auto;
+        }
+        .item1-text{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            color: white;
+            text-align: center;
+        }
+        .item1-text h2{
+            font-size: 70px;
+            letter-spacing: 10px;
+            font-weight: lighter;
+            line-height: 30px;
+        }
+        .item1-text p{
+            font-size: 30px;
+            letter-spacing: 6px;
+            font-weight: lighter;
+        }
+        .item1 h4{
+            font-size: 30px;
+            letter-spacing: 6px;
+        }
+        .item2{
+            padding: 40px 40px;
+            margin: auto;
+            background-color: rgba(255, 192, 203,0.6);
+            text-align: center;
+            filter: grayscale(0.5);
+        }
+        .item2-item{
+            max-width: 1000px;
+            margin: auto;
+        }
+        .item2 img{
+            width: 100%;
+            height: auto;
+            filter: grayscale(0.7);
+           
+        }
+        .item2 h2{
+            text-align: center;
+            color: rgba(100, 100, 100,0.9);
+            font-size: 35px;
+        }
+        .item2 p{
+            font-style: italic;
+            font-size: 14px;
+            letter-spacing: 1px;
+            line-height: 25px;
+            margin-top: 40px;
+            text-align: left;
+        }
+        .item2 a{
+            display: inline-block;
+            text-decoration: none;
+            padding: 20px;
+            background-color: black;
+            margin-top: 20px;
+            color: white;
+            border-radius: 5px;  
+        }
+        .item2 a:hover{
+            color: black;
+            background-color: lightgrey;
+        }
+        .item3{
+            position: relative;
+        }
+        .item3 img{
+            width: 100%;
+            height: auto;
+        }
+        .item3-text{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            color: white;
+            text-align: center;
+        }
+        .item3 h1{
+            font-size: 60px;
+            font-weight: lighter;
+            letter-spacing: 8px;
+            margin-bottom: 80px;
+        }
+        .item3 h4{
+            font-size: 30px;
+            font-weight: lighter;
+            line-height: 20px;
+        }
+        .item4{
+            padding: 40px 40px;
+            margin: auto;
+            background-color: rgba(255, 192, 203,0.6);
+            text-align: center;
+            filter: grayscale(0.5);
+        }
+        .item4-item{
+            max-width: 1000px;
+            margin: auto;
+        }
+        .item4 img{
+            margin-top: 30px;
+            width: 100%;
+            height: auto;
+            filter: grayscale(0.7);
+        }
+        .item4 h2{
+            text-align: center;
+            color: rgba(100, 100, 100,0.9);
+            font-size: 35px;
+            margin-top: 50px;
+        }
+        .item4-text{
+            margin-top: 50px;
+            display: flex;
+        }
+        
+        .item4-text-item{
+            flex: 1;
+        }
+        .item4-text-item h2{
+            font-weight: lighter;
+            color: black;
+        }
+        .item5{
+            margin: auto;
+            text-align: center;
+            padding: 40px 0 100px;
+            background-color: lightpink;
+           
+        }
+        .item5 h1{
+            font-weight: lighter;
+            letter-spacing: 5px;
+            font-size: 35px;
+        }
+        .item5 h4{
+            font-weight: lighter;
+            letter-spacing: 5px;
+            font-size: 20px;
+        }
+        .item5 a{
+            font-size: 25px;
+            display: inline-block;
+            text-decoration: none;
+            padding: 15px 60px;
+            background-color: lightcoral;
+            margin-top: 20px;
+            color: white;
+            border-radius: 5px; 
+        }
+        .item5 a:hover{
+            color: black;
+            background-color: lightgray;
+        }
+        .nav{
+            position: fixed;
+            bottom: 0;
+            background-color: white;
+            padding: 10px;
+            display: flex;
+            width: 100%;
+            opacity: 0.7;
+        }
+        .item{
+            margin: auto;
+            text-align: center;
+            width: 24%;
+            display: inline-block;
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+        }
+        .item:hover{
+            background-color: lightgray;
+            
+        }
+        .nav .item{
+            flex:1;
+        }
+        .menursvp{
+            display: none;
+            position: fixed;
+            top: 15%;
+            left: 50%;
+            transform: translate(-50%);
+            height: 300px;
+            width: 600px;
+            margin: auto;
+            padding: 20px 40px;
+            background-color: white;
+            text-align: center;
+            box-shadow: 2px 2px 5px 1px gray;
+            animation: animation 0.6s;
+        }
+        @keyframes animation{
+            0% {bottom: 0%;}
+            50% {bottom: 50%;}
+            100% {top: 15%;}
+        }
+        @keyframes animation1{
+            0% {scale: 0.1;}
+            50% {scale: 0.5;}
+            100% {scale: 1;}
+        }
+        .menursvp h1{
+            font-size: 35px;
+            letter-spacing: 5px;
+            font-weight: lighter;
+        }
+        .menursvp p{
+            font-size: 15px;
+        }
+        .menursvp input{
+            width: 100%;
+            height: 38px;
+            border: 1px solid lightgray;
+            padding-left: 10px;
+        }
+        .menursvp-item{
+            display: flex;
+       
+        }
+        .menursvp-item .item{
+            flex: 1;
+            display: block;
+            text-decoration: none;
+            background-color: green;
+            color: white;
+            font-size: 15px;
+        }
+        .menursvp-item .item:hover{
+            background-color: lightgray;
+            color: black;
+        }
+        #red{
+            background-color: rgba(255, 0,0 , 0.8);
+        }
+        #red:hover{
+            background-color: lightgray;
+            color: black;
+        }
+        @media only screen and (max-width:1200px){
+          
+          .item1 h2{
+              font-size: 60px;
+              line-height: 30px;
+          }
+        }
+        @media only screen and (max-width:1000px){
+          
+         .item1 h2{
+              font-size: 50px;
+              line-height: 30px;
+         }
+         
+        }
+        @media only screen and (max-width:800px){
+  
+          .item1 h2{
+              font-size: 40px;
+              line-height: 30px;
+          }
+        }
+        @media only screen and (max-width:700px){
+        
+         .item1 h2{
+              font-size: 30px;
+              line-height: 30px;
+         }
+         .menursvp{
+            width: 500px;
+            height: 300px;
+        }
+      
+        }
+        @media only screen and (max-width:600px){
+          .item4-text{
+              flex-direction: column;
+          }
+          .item3 h1{
+             font-size: 40px;
+          }
+         .item1 h2{
+              font-size: 20px;
+              line-height: 30px;
+         }
+         .nav{
+            display: none;
+         }
+         .menursvp{
+            width: 400px;
+            height: 380px;
+        }
+        .menursvp-item{
+            flex-direction: column;
+        }
+        .menursvp-item .item{
+            display: block;
+            width: 100%;
+        }
+      }
+      @media only screen and (max-width:400px){
+         .menursvp{
+            width: 300px;
+            height: 380px;
+        }
+        .menursvp-item{
+            flex-direction: column;
+        }
+        .menursvp-item .item{
+            display: block;
+            width: 100%;
+        }
+      }
+    </style>
+</head>
+<body id="body">
+    <div class="item1">
+        <img src="wedding_couple.jpg" alt="">
+        <div class="item1-text">
+            <h2>Jane & John</h2>
+            <p>Are getting married</p>
+            <h4>17.07.2017</h4>
+        </div>
+    </div>
+    <div class="item2" id="jane">
+        <div class="item2-item">
+            <h2>Jane & John</h2>
+            <img src="wedding_couple2.jpg" alt="">
+            <p>You all know us. And we all know you. We are getting married lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <a href="#wedding">Wedding Details</a>
+        </div>
+        
+    </div>
+    <div class="item3" >
+        <img src="flowers.jpg" alt="">
+        <div class="item3-text">
+            <h1>You Are Invited</h1>
+            <h4>Of course..</h4>
+        </div>
+    </div>
+    <div class="item4" id="wedding">
+        <div class="item4-item">
+            <h2>THE WEDDING</h2>
+            <img src="wedding_location.jpg" alt="">
+            <div class="item4-text">
+                <div class="item4-text-item">
+                    <h2>When</h2>
+                    <p>Wedding Ceremony - 2:00pm</p>
+                    <p>Reception & Dinner - 5:00pm</p>
+                </div>
+                <div class="item4-text-item">
+                    <h2>Where</h2>
+                    <p>Some place, an address</p>
+                    <p>Some where, some address</p>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+    <div class="item5" id="rsvp">
+        <h1>HOPE YOU CAN MAKE IT!</h1>
+        <h4>Kindly Respond By January, 2017</h4>
+        <a href="javascript:showmenursvp();">RSVP</a>
+        <script>
+            function showmenursvp(){
+                let a =document.getElementById("menursvp");
+                a.style.display="block";
+                let b=document.getElementById("body");
+                b.style.opacity="0.8";
+             
+            }
+        </script>
+    </div>
+    <div class="nav">
+        <a class="item" href="">Home</a>
+        <a class="item"  href="#jane">Jane & John</a>
+        <a class="item"  href="#wedding">Wedding</a>
+        <a class="item"  href="#rsvp">RSVP</a>
+    </div>
+    <div class="menursvp" id="menursvp">
+        <h1>CAN YOU COME?</h1>
+        <p>We really hope you can make it.</p>
+        <input type="text" placeholder="Name(s)">
+        <p><i>Sincerely, John & Jane</i> </p>
+        <div class="menursvp-item">
+            <a class="item" href="javascript:hidemenursvp();">Going</a>
+            <a class="item" id="red" href="javascript:hidemenursvp();">Can't come</a>
+            <script>
+                function hidemenursvp(){
+                    let a=document.getElementById("menursvp");
+                    a.style.display="none";
+                    let b=document.getElementById("body");
+                    b.style.opacity="1";
+                }
+            </script>
+        </div>
+    </div>
+</body>
+</html>
